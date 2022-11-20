@@ -1,1 +1,5 @@
-venv
+settings.py
+test.py
+**/venv/*
+**/__pycache__/*
+**/.vscode/*
