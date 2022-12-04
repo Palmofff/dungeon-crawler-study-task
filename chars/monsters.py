@@ -1,6 +1,6 @@
-from char import Characters
+from chars.char import Characters
 class Monsters(Characters):
-    def __init__(self, name, race, lvl, attack, ac, damage, exp):
-        super().__init__(name, race, lvl, attack, ac)
+    def __init__(self, name, lvl, max_hp, hp,  attack_bonus, ac, damage, exp):
+        super().__init__(name, lvl, max_hp, hp, attack_bonus, ac)
         self.damage = damage
         self.exp = exp

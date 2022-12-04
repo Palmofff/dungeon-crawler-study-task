@@ -3,6 +3,7 @@ class Armor:
         self.name = name
         self.lvl = lvl
         self.ac = ac
+        
 leather = Armor("leather armor", 1, 12)
 iron = Armor("iron armor", 3, 14)
 adamantine = Armor("adamantine armor", 5, 16)
