@@ -20,8 +20,9 @@ class Hero(Characters, metaclass=Singleton):
         print(f"Name: {self.name}, race is {self.race.name}")
         print(f"Armor:{self.armor.name}, Weapon: {self.weapon.name}")
         print(f"Stats:Armor class:{self.ac}, Attack bonus:{self.attack_bonus}, Damage:{self.damage[0]}d{self.damage[1]}+{self.damage[2]}, HP:{self.hp}/{self.max_hp}")
-   
+
         
+
 
 
 
