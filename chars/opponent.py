@@ -28,8 +28,9 @@ class Opponent(Characters):
             self.lvl = 10
         self.max_hp = round(player.max_hp*op.max_hp * (1 + (self.lvl - player.lvl)*0.1))
         self.hp = self.max_hp
-        self.attack_bonus = round(op.attack_bonus * player.attack_bonus * (1 + (self.lvl - player.lvl)*0.1))
+        self.attack_bonus = round(op.attack_bonus*self.lvl)
         self.damage = op.damage
+        self.damage[2] = round(self.damage[2]*(1+(self.lvl-op.alvl)*0.2))
         self.ac = round(op.ac * player.ac * (1 + (self.lvl - player.lvl)*0.1))
         self.exp = self.lvl*op.exp
         print(f"Your opponent is {self.name} {self.lvl} lvl {self.max_hp} {(1 + (self.lvl - player.lvl)*0.1)}. Yoy get {self.exp}")
