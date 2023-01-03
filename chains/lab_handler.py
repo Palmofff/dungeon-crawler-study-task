@@ -30,7 +30,7 @@ class Labyrinth(AbstractHandler):
                 while lwr not in labway:
                     input_slow("Error, choose only from left, straight:")
                     lwr = input()
-                    while lwr == "right":
+                while lwr == "right":
                         input_slow("Its dead end, choose only from left, straight:")
                         lwr = input()
 
@@ -48,7 +48,7 @@ class Labyrinth(AbstractHandler):
                 while lwr not in labway:
                     input_slow("Error, choose only from left, right:")
                     lwr = input()
-                    while lwr == "straight":
+                while lwr == "straight":
                         input_slow("Its dead end, choose only from left, right:")
                         lwr = input()
         else:
@@ -65,7 +65,7 @@ class Labyrinth(AbstractHandler):
                 while lwr not in labway:
                     input_slow("Error, choose only from right, straight:")
                     lwr = input()
-                    while lwr == "right":
+                while lwr == "right":
                         input_slow("Its dead end, choose only from right, straight:")
                         lwr = input()
 
