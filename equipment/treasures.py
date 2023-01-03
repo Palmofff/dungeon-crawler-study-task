@@ -28,7 +28,9 @@ def chest():
             input_slow("Answer only Yes, or No: ")
             arm_ans = input()
         if arm_ans == "Yes":
+            player.ac -= player.armor.ac
             player.armor = armor_choice
+            player.ac += player.armor.ac
             print_slow(f"You equipped {player.armor.name}.")
     elif awr == 2:
         if player.lvl < 3:
@@ -51,6 +53,9 @@ Damage: {player.weapon.damage[0]}d{player.weapon.damage[1]}+{player.weapon.damag
             input_slow("Answer only Yes, or No: ")
             wep_ans = input()
         if wep_ans == "Yes":
+            player.attack_bonus -= player.weapon.attack_bonus
             player.weapon = weapon_choice
+            player.damage = player.weapon.damage
+            player.attack_bonus += player.weapon.attack_bonus
             print_slow(f"You equipped {player.weapon.name}.")
     

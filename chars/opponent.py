@@ -30,6 +30,7 @@ class Opponent(Characters):
         self.hp = self.max_hp
         self.attack_bonus = round(op.attack_bonus*self.lvl*game.difficult)
         self.damage = op.damage
+        self.damage[1] = round(self.damage[1]*game.difficult)
         self.damage[2] = round(self.damage[2]*(1+(self.lvl-op.alvl)*0.2)*game.difficult)
         self.ac = round(op.ac * player.ac * (1 + (self.lvl - player.lvl)*0.1)*game.difficult)
         self.exp = round(self.lvl*op.exp*game.difficult)

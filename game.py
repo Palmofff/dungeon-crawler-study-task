@@ -5,5 +5,3 @@ from chains.chain import *
 create_char()
 while game.progress == True:
     chained(death)
-
-
