@@ -89,8 +89,8 @@ class Labyrinth(AbstractHandler):
                 print_slow("Dead end, go away and try another tunnel branch")
                 input_slow("What side do you want to go? Choose:")
                 lw = input()
-                while lw not in labway or lw == "straight":
-                    input_slow("Error, choose only from left, right:")
+                while lw not in labway or lw == "left":
+                    input_slow("Error, choose only from straight, right:")
                     lw = input()
                 way_r = randint(1, 100)
                 if lw == "right":
