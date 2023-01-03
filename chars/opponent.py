@@ -2,7 +2,7 @@ from chars.char import Characters
 from random import *
 from chars.monsters import *
 from chars.char_creation import player
-
+from supporting.game_obj import *
 class Opponent(Characters):
     def __init__(self, name, lvl, max_hp, hp, attack_bonus, damage, ac, exp):
         super().__init__(name, lvl, max_hp, hp, attack_bonus, damage, ac)
@@ -26,14 +26,14 @@ class Opponent(Characters):
             self.lvl = 1
         elif self.lvl > 10:
             self.lvl = 10
-        self.max_hp = round(player.max_hp*op.max_hp * (1 + (self.lvl - player.lvl)*0.1))
+        self.max_hp = round(player.max_hp*op.max_hp * (1 + (self.lvl - player.lvl)*0.1) * game.difficult)
         self.hp = self.max_hp
-        self.attack_bonus = round(op.attack_bonus*self.lvl)
+        self.attack_bonus = round(op.attack_bonus*self.lvl*game.difficult)
         self.damage = op.damage
-        self.damage[2] = round(self.damage[2]*(1+(self.lvl-op.alvl)*0.2))
-        self.ac = round(op.ac * player.ac * (1 + (self.lvl - player.lvl)*0.1))
-        self.exp = self.lvl*op.exp
-        print(f"Your opponent is {self.name} {self.lvl} lvl {self.max_hp} {(1 + (self.lvl - player.lvl)*0.1)}. Yoy get {self.exp}")
+        self.damage[2] = round(self.damage[2]*(1+(self.lvl-op.alvl)*0.2)*game.difficult)
+        self.ac = round(op.ac * player.ac * (1 + (self.lvl - player.lvl)*0.1)*game.difficult)
+        self.exp = round(self.lvl*op.exp*game.difficult)
+        print_slow(f"Your opponent is {self.name}, lvl: {self.lvl}. ")
 
 enemy = Opponent("name", 1, 1, 1, 1, [1, 2, 1], 1, 1)
     

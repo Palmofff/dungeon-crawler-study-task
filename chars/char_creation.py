@@ -4,11 +4,13 @@ from equipment.armor import *
 from equipment.weapons import *
 from chars.races import *
 from supporting.defs import *
+from supporting.game_obj import *
 player = Hero("name", "race", 1, 1, 1, 1, [1, 5, 1], 1, 0, 0, sickle, leather)
 
 def create_char():
         input_slow("Give a name to your char:")
         player.name = input()
+        player.lvl = 1
         print_slow("You can choose a race from this list: human, elf, dwarf, orc")
         racelist = {"human":human, "elf":elf, "dwarf":dwarf, "orc":orc}
         input_slow("Choose your race:")
@@ -40,3 +42,9 @@ def create_char():
         player.max_hp = randint(11, 18)
         player.hp = player.max_hp
         print_slow(f"Your hp is {player.hp}/{player.max_hp}")
+        player.exp = 0
+        player.score = 0
+        game.progress = True
+        print_slow("You walked in forest and then you found a strange cave.")
+        print_slow("You entered this cave and it was a magical portal to the labyrinth.")
+        print_slow("You heard a whisper in your head:You can't go back, try to survive.*laughing*")

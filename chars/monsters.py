@@ -14,3 +14,4 @@ orc_bandit = Monsters("orc bandit", 5, 5, 0.9, 0.9, 0.35, 0.9, [1, 8, 2], 500)
 wyvern = Monsters("wyvern", 7, 7, 0.9, 0.9, 0.4, 0.9, [2, 6, 3], 550 )
 void_demon = Monsters("void demon", 9, 9, 1, 1, 0.45, 1, [2, 8, 3], 600)
 
+

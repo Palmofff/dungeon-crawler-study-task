@@ -9,4 +9,3 @@ def input_slow(string):
         print(letter, end='', flush=True)
         sleep(0.04)
     print("", end="")
-    
