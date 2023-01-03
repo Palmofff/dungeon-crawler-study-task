@@ -26,15 +26,28 @@ class Labyrinth(AbstractHandler):
             else:
                 print_slow("Dead end, go away and try another tunnel branch")
                 input_slow("What side do you want to go? Choose:")
-                lwr = input()
-                while lwr not in labway:
+                lw = input()
+                while lw not in labway or lw == "right":
                     input_slow("Error, choose only from left, straight:")
-                    lwr = input()
-                while lwr == "right":
-                        input_slow("Its dead end, choose only from left, straight:")
-                        lwr = input()
-
-        elif lw == 0.8:
+                    lw = input()
+                way_r = randint(1, 100)
+                if lw == "straight":
+                    game.difficult = 0.8
+                    way_r = randint(1, 100)
+                    if 1 <= way_r <= 35:
+                        chest()
+                    elif 36 <= way_r <= 100:
+                        Opponent.enemy_appear(enemy)
+                        fight()
+                elif lw == "left":
+                    game.difficult = 0.6
+                    way_r = randint(1, 100)
+                    if 1 <= way_r <= 30:
+                        chest()
+                    elif 31 <= way_r <= 100:
+                        Opponent.enemy_appear(enemy)
+                        fight()
+        elif lw == "straight":
             game.difficult = 0.8
             if 1 <= way_r <= 25:
                 chest()
@@ -44,13 +57,27 @@ class Labyrinth(AbstractHandler):
             else:
                 print_slow("Dead end, go away and try another tunnel branch")
                 input_slow("What side do you want to go? Choose:")
-                lwr = input()
-                while lwr not in labway:
+                lw = input()
+                while lw not in labway or lw == "straight":
                     input_slow("Error, choose only from left, right:")
-                    lwr = input()
-                while lwr == "straight":
-                        input_slow("Its dead end, choose only from left, right:")
-                        lwr = input()
+                    lw = input()
+                way_r = randint(1, 100)
+                if lw == "right":
+                    game.difficult = 1
+                    way_r = randint(1, 100)
+                    if 1 <= way_r <= 45:
+                        chest()
+                    elif 46 <= way_r <= 100:
+                        Opponent.enemy_appear(enemy)
+                        fight()
+                elif lw == "left":
+                    game.difficult = 0.6
+                    way_r = randint(1, 100)
+                    if 1 <= way_r <= 30:
+                        chest()
+                    elif 31 <= way_r <= 100:
+                        Opponent.enemy_appear(enemy)
+                        fight()
         else:
             game.difficult = 0.6
             if 1 <= way_r <= 20:
@@ -61,13 +88,27 @@ class Labyrinth(AbstractHandler):
             else:
                 print_slow("Dead end, go away and try another tunnel branch")
                 input_slow("What side do you want to go? Choose:")
-                lwr = input()
-                while lwr not in labway:
-                    input_slow("Error, choose only from right, straight:")
-                    lwr = input()
-                while lwr == "right":
-                        input_slow("Its dead end, choose only from right, straight:")
-                        lwr = input()
+                lw = input()
+                while lw not in labway or lw == "straight":
+                    input_slow("Error, choose only from left, right:")
+                    lw = input()
+                way_r = randint(1, 100)
+                if lw == "right":
+                    game.difficult = 1
+                    way_r = randint(1, 100)
+                    if 1 <= way_r <= 45:
+                        chest()
+                    elif 46 <= way_r <= 100:
+                        Opponent.enemy_appear(enemy)
+                        fight()
+                if lw == "straight":
+                    game.difficult = 0.8
+                    way_r = randint(1, 100)
+                    if 1 <= way_r <= 35:
+                        chest()
+                    elif 36 <= way_r <= 100:
+                        Opponent.enemy_appear(enemy)
+                        fight()
 
 
         return super().handle(request)

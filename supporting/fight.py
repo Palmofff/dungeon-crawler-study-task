@@ -69,7 +69,7 @@ def mid_boss_fight():
                         mid_boss.hp =  mid_boss.hp - pl_dmg
                         player.score += pl_dmg
                         print_slow(f"You dealt {pl_dmg} damage to { mid_boss.name}")
-                    print_slow(f"{ mid_boss.name} hp: { mid_boss.hp}/{ mid_boss.max_hp}")
+                        print_slow(f"{ mid_boss.name} hp: { mid_boss.hp}/{ mid_boss.max_hp}")
                     if  mid_boss.hp <= 0:
                         print_slow(f"You killed { mid_boss.name} and get much exp reward!")
                         player.exp = 23600
@@ -100,7 +100,7 @@ Damage: {player.weapon.damage[0]}d{player.weapon.damage[1]}+{player.weapon.damag
                         rew_wp_ans = input()
                         while rew_wp_ans not in answers:
                             input_slow("Answer only Yes, or No: ")
-                            wep_ans = input()
+                            rew_wp_ans = input()
                         if rew_wp_ans  == "Yes":
                             player.weapon = rew_w.choice
                             print_slow(f"You equipped {player.weapon.name}.")
