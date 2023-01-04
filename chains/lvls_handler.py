@@ -1,5 +1,7 @@
 from chains.abstracthandler import *
-from supporting.lvlup import *
+from utils.lvlup import *
+
+
 class Lvls(AbstractHandler):
     def handle(self, request):
         lvl_up()

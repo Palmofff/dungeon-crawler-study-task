@@ -2,11 +2,13 @@ from chains.handler1 import *
 from chains.abstracthandler import *
 from chains.death_handler import *
 from chains.win_handler import *
-from chains.lvls_handler import*
+from chains.lvls_handler import *
 from chains.endboss_handler import *
-from chains.midboss_handler import*
+from chains.midboss_handler import *
 from chains.lab_handler import *
 from chars.char_creation import player
+
+
 def chained(handler: Handler):
     handler.handle(player)
 

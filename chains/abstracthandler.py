@@ -1,6 +1,7 @@
 from chains.handler1 import *
-class AbstractHandler(Handler):
 
+
+class AbstractHandler(Handler):
 
     _next_handler: Handler = None
 

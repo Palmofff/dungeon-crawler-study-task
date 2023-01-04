@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-class Handler(ABC):
 
+class Handler(ABC):
     @abstractmethod
     def set_next(self, handler):
         pass

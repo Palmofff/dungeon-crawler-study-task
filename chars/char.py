@@ -6,4 +6,4 @@ class Characters:
         self.hp = hp
         self.attack_bonus = attack_bonus
         self.damage = damage
-        self.ac = ac #ac - armor class
+        self.ac = ac  # ac - armor class

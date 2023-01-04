@@ -1,6 +1,7 @@
-class Game_Object():
+class Executer:
     def __init__(self, progress: bool, difficult: int):
         self.progress = progress
         self.difficult = difficult
 
-game = Game_Object(True, 1)
+
+game_exe = Executer(True, 1)

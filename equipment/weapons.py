@@ -3,9 +3,11 @@ class Weapon:
         self.name = name
         self.lvl = lvl
         self.attack_bonus = attack_bonus
-        self.damage = damage 
-battleaxe = Weapon("battleaxe", 1, 1, [1, 8, 2]) # where [1, 8, 2] is 1d8+2
-scimitar = Weapon("scimitar",1, 3, [1, 6, 1])
+        self.damage = damage
+
+
+battleaxe = Weapon("battleaxe", 1, 1, [1, 8, 2])  # where [1, 8, 2] is 1d8+2
+scimitar = Weapon("scimitar", 1, 3, [1, 6, 1])
 sickle = Weapon("sickle", 1, 5, [1, 4, 1])
 shortsword = Weapon("shortsword", 3, 3, [1, 6, 2])
 maul = Weapon("maul", 3, 0, [2, 6, 1])
