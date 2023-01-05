@@ -66,9 +66,7 @@ As soon as you saw a reflection of yourself, it crawled out of the mirror and ru
         self.attack_bonus = round(op.attack_bonus * self.lvl * game_exe.difficult)
         self.damage = op.damage
         self.damage[1] = round(self.damage[1] * game_exe.difficult)
-        self.damage[2] = round(
-            self.damage[2] * (1 + (self.lvl - op.alvl) * 0.2) * game_exe.difficult
-        )
+        self.damage[2] = round(self.damage[2] * game_exe.difficult)
         self.ac = round(
             op.ac * player.ac * (1 + (self.lvl - player.lvl) * 0.1) * game_exe.difficult
         )
